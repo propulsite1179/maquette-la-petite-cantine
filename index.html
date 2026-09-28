@@ -40,7 +40,7 @@ nav{position:sticky;top:0;z-index:60;background:rgba(8,26,46,.96);backdrop-filte
 @media(max-width:820px){.nav-links{display:none}}
 
 /* ---------- Hero ---------- */
-.hero{position:relative;overflow:hidden;background:linear-gradient(165deg,#081a2e 0%,#0c2340 48%,#143457 100%);color:#fff;text-align:center;padding:112px 24px 158px}
+.hero{position:relative;overflow:hidden;background:linear-gradient(165deg,#081a2e 0%,#0c2340 48%,#143457 100%);background-image:linear-gradient(180deg,rgba(4,16,30,.62) 0%,rgba(6,20,36,.74) 100%),url("https://images.unsplash.com/photo-1476673160081-cf065607f449?auto=format&fit=crop&w=1800&q=80");background-size:cover;background-position:center 60%;color:#fff;text-align:center;padding:112px 24px 158px}
 .hero::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.07) 1px,transparent 1.6px);background-size:26px 26px;opacity:.55;pointer-events:none}
 .hero-inner{position:relative;max-width:840px;margin:0 auto;animation:rise .9s ease-out both}
 @keyframes rise{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
@@ -139,6 +139,13 @@ footer a:hover{text-decoration:underline;text-underline-offset:4px}
 .footer-bottom{border-top:1px solid rgba(255,255,255,.12);padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:.85rem;color:rgba(255,255,255,.55)}
 @media(max-width:980px){.footer-grid{grid-template-columns:1fr;gap:32px}}
 @media(max-width:760px){section{padding:72px 0}}
+
+/* --- photos maquette (QA 28/09) --- */
+.ph-img{display:block;width:100%;height:100%;object-fit:cover}
+.ph-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin:34px auto 0;max-width:1080px}
+.ph-card{position:relative;border-radius:14px;overflow:hidden;aspect-ratio:4/3;box-shadow:0 10px 30px rgba(10,20,40,.16)}
+.ph-cap{position:absolute;left:0;right:0;bottom:0;padding:10px 14px 12px;background:linear-gradient(180deg,rgba(0,0,0,0) 0%,rgba(0,0,0,.72) 60%);color:#fff;font-size:.92rem;letter-spacing:.4px}
+
 </style>
 </head>
 <body>
@@ -152,7 +159,7 @@ footer a:hover{text-decoration:underline;text-underline-offset:4px}
       <a href="#avis">Avis</a>
       <a href="#infos">Infos pratiques</a>
     </div>
-    <a class="nav-tel" href="tel:+33494066848" aria-label="Réserver par téléphone">04 94 06 68 48</a>
+    <a class="nav-tel" href="tel:tel:+33494066848" aria-label="Réserver par téléphone">04 94 06 68 48</a>
   </div>
 </nav>
 
@@ -162,8 +169,8 @@ footer a:hover{text-decoration:underline;text-underline-offset:4px}
     <h1>La Petite Cantine</h1>
     <p class="hero-accroche">« La cuisine maison au cœur du Lavandou »</p>
     <p class="hero-lead">Poissons du port, produits frais du Var et plats préparés chaque matin sur place, servis midi et soir à deux pas de la plage.</p>
-    <a class="btn-reserver" href="tel:+33494066848">Réserver</a>
-    <p class="hero-tel">ou appelez directement le <a href="tel:+33494066848">04 94 06 68 48</a></p>
+    <a class="btn-reserver" href="tel:tel:+33494066848">Réserver</a>
+    <p class="hero-tel">ou appelez directement le <a href="tel:tel:+33494066848">04 94 06 68 48</a></p>
   </div>
   <svg class="wave" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
     <path d="M0,44 C240,92 480,4 720,30 C960,58 1200,84 1440,34 L1440,90 L0,90 Z" fill="#ffffff"/>
@@ -261,9 +268,10 @@ footer a:hover{text-decoration:underline;text-underline-offset:4px}
       </div>
       <div class="carte-cta">
         <p>Une table face au port&nbsp;?</p>
-        <a class="btn-outline" href="tel:+33494066848">Réserver · 04 94 06 68 48</a>
+        <a class="btn-outline" href="tel:tel:+33494066848">Réserver · 04 94 06 68 48</a>
       </div>
     </div>
+  <div class="ph-strip"><figure class="ph-card"><img class="ph-img" src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&w=1100&q=80" alt="Poisson du jour" loading="lazy"><span class="ph-cap">Le poisson du jour</span></figure><figure class="ph-card"><img class="ph-img" src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=1100&q=80" alt="Frites maison" loading="lazy"><span class="ph-cap">Frites maison, coupe minute</span></figure><figure class="ph-card"><img class="ph-img" src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=1100&q=80" alt="Apéritif entre amis" loading="lazy"><span class="ph-cap">L'apéro entre amis</span></figure><figure class="ph-card"><img class="ph-img" src="https://images.unsplash.com/photo-1509233725247-49e657c54213?auto=format&fit=crop&w=1100&q=80" alt="Le Lavandou" loading="lazy"><span class="ph-cap">Le port du Lavandou</span></figure></div>
   </section>
 
   <section id="avis" class="dark">
@@ -300,7 +308,7 @@ footer a:hover{text-decoration:underline;text-underline-offset:4px}
         </article>
       </div>
     </div>
-  </section>
+  <div class="ph-strip" style="max-width:980px"><figure class="ph-card"><img class="ph-img" src="https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1100&q=80" alt="Salle du restaurant" loading="lazy"><span class="ph-cap">La salle — cuisine ouverte sur le comptoir</span></figure><figure class="ph-card"><img class="ph-img" src="https://images.unsplash.com/photo-1472214103451-9374bd1c798e?auto=format&fit=crop&w=1100&q=80" alt="Arrière-pays varois" loading="lazy"><span class="ph-cap">Le Lavandou, à deux pas</span></figure></div></section>
 
   <section id="infos">
     <div class="wrap">
@@ -334,7 +342,7 @@ footer a:hover{text-decoration:underline;text-underline-offset:4px}
           </span>
           <h3>Réservation</h3>
           <p>Réservez votre table par téléphone</p>
-          <a class="gros-tel" href="tel:+33494066848">04 94 06 68 48</a>
+          <a class="gros-tel" href="tel:tel:+33494066848">04 94 06 68 48</a>
           <p style="font-size:.9rem">Conseillée le soir, le week-end et en haute saison.</p>
         </div>
       </div>
@@ -354,7 +362,7 @@ footer a:hover{text-decoration:underline;text-underline-offset:4px}
       </div>
       <div>
         <h4>Contact</h4>
-        <p class="f-line"><a href="tel:+33494066848">04 94 06 68 48</a></p>
+        <p class="f-line"><a href="tel:tel:+33494066848">04 94 06 68 48</a></p>
         <p class="f-line">Sur le port du Lavandou<br>83980 Le Lavandou, Var (83)</p>
       </div>
       <div>
